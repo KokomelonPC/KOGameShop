@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>แจ้งชำระเงิน M-Game | KOGame Shop</title>
+  <link rel="stylesheet" href="css/mgame-styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html"><img src="assets/brand-mark.svg" alt=""><span>KOGame Shop</span></a>
+    <nav class="nav"><a href="index.html">M-Game</a><a href="cart.html">ตะกร้า</a><a href="orders.html">ออเดอร์</a></nav>
+    <div class="account-nav"><span data-account></span><a class="cart-link" href="cart.html">ตะกร้า (<span data-cart-count>0</span>)</a></div>
+  </header>
+  <main class="page-layout">
+    <section>
+      <div class="section-heading">
+        <p class="eyebrow">Payment</p>
+        <h1>แจ้งชำระเงิน M-Game</h1>
+        <p class="lead">โอนตามช่องทางที่สะดวก แล้วแนบสลิปเพื่อส่งออเดอร์ให้แอดมินตรวจสอบ</p>
+      </div>
+      <div class="payment-grid">
+        <article class="payment-card">
+          <div class="bank-row">
+            <div class="bank-logo"><img src="assets/ttb-logo.png" alt="TTB"></div>
+            <div><h3>TTB</h3><p>เลขบัญชี: <strong>921-7-80960-8</strong><br>ชื่อบัญชี: นาย กัมพล องการ</p></div>
+          </div>
+        </article>
+        <article class="payment-card">
+          <div class="bank-row">
+            <div class="bank-logo"><img src="assets/kasikorn-logo.png" alt="KBank"></div>
+            <div><h3>KBank</h3><p>เลขบัญชี: <strong>554-2-31395-3</strong><br>ชื่อบัญชี: นาย กัมพล องการ</p></div>
+          </div>
+        </article>
+        <article class="payment-card"><img src="assets/promptpay-qr.jpg" alt="QR พร้อมเพย์"><h3>QR พร้อมเพย์</h3></article>
+        <article class="payment-card"><img src="assets/truemoney-qr.jpg" alt="QR TrueMoney"><h3>QR TrueMoney</h3></article>
+      </div>
+    </section>
+    <aside class="panel">
+      <p class="eyebrow">สรุปรายการ</p>
+      <div data-payment-summary></div>
+      <form data-payment-form>
+        <label for="name">ชื่อผู้โอน</label>
+        <input id="name" type="text" placeholder="ชื่อผู้โอน" required>
+        <label for="amount">ยอดโอน (บาท)</label>
+        <input id="amount" type="number" min="1" placeholder="ยอดโอน" required>
+        <label><input type="radio" name="paymentMethod" value="โอน TTB" checked> โอน TTB</label>
+        <label><input type="radio" name="paymentMethod" value="โอน KBank"> โอน KBank</label>
+        <label><input type="radio" name="paymentMethod" value="QR พร้อมเพย์"> QR พร้อมเพย์</label>
+        <label><input type="radio" name="paymentMethod" value="QR TrueMoney"> QR TrueMoney</label>
+        <label for="note">รายละเอียดในเกม</label>
+        <textarea id="note" placeholder="ชื่อเกม เซิร์ฟเวอร์ ชื่อตัวละคร หรือหมายเหตุ"></textarea>
+        <label for="slip">แนบสลิป</label>
+        <input id="slip" type="file" accept="image/*" required>
+        <button class="button primary" type="submit">ส่งแจ้งโอน</button>
+      </form>
+    </aside>
+  </main>
+  <script src="js/mgame.js"></script>
+</body>
+</html>

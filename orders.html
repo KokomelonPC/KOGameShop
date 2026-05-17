@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ออเดอร์ M-Game | KOGame Shop</title>
+  <link rel="stylesheet" href="css/mgame-styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html"><img src="assets/brand-mark.svg" alt=""><span>KOGame Shop</span></a>
+    <nav class="nav"><a href="index.html">M-Game</a><a href="cart.html">ตะกร้า</a><a class="is-active" href="orders.html">ออเดอร์</a></nav>
+    <div class="account-nav"><span data-account></span><a class="cart-link" href="cart.html">ตะกร้า (<span data-cart-count>0</span>)</a></div>
+  </header>
+  <main class="section">
+    <div class="section-heading">
+      <p class="eyebrow">My Orders</p>
+      <h1>ติดตามออเดอร์ M-Game</h1>
+      <p class="muted">ออเดอร์เก็บในเครื่องผู้ใช้สำหรับเดโม ถ้าจะใช้งานจริงค่อยต่อฐานข้อมูลหรือ Google Apps Script</p>
+    </div>
+    <div class="orders-list" data-orders></div>
+  </main>
+  <script src="js/mgame.js"></script>
+</body>
+</html>

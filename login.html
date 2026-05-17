@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login | KOGame Shop</title>
+  <link rel="stylesheet" href="css/mgame-styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html"><img src="assets/brand-mark.svg" alt=""><span>KOGame Shop</span></a>
+    <nav class="nav"><a href="index.html">M-Game</a><a href="cart.html">ตะกร้า</a><a href="orders.html">ออเดอร์</a></nav>
+    <div class="account-nav"><a class="cart-link" href="cart.html">ตะกร้า (<span data-cart-count>0</span>)</a></div>
+  </header>
+  <main class="auth-layout">
+    <section>
+      <p class="eyebrow">Secure Access</p>
+      <h1>Login ก่อนสั่งซื้อ M-Game</h1>
+      <p class="lead">ระบบนี้เป็น Login แบบเดโมด้วย localStorage สำหรับทดสอบ flow ร้านค้า ก่อนต่อ Firebase หรือระบบสมาชิกจริงในขั้นถัดไป</p>
+    </section>
+    <section class="auth-box">
+      <h2>Login</h2>
+      <p class="muted">กรอกอีเมลและรหัสผ่านเพื่อเข้าสู่ระบบ</p>
+      <form data-login-form>
+        <label for="email">Email</label>
+        <input id="email" type="email" placeholder="Email" required>
+        <label for="password">Password</label>
+        <input id="password" type="password" placeholder="Password" required>
+        <button class="button primary" type="submit">Login</button>
+      </form>
+      <p class="muted">ยังไม่มีบัญชี? <a href="register.html"><strong>สมัครสมาชิก</strong></a></p>
+    </section>
+  </main>
+  <script src="js/mgame.js"></script>
+</body>
+</html>

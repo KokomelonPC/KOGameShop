@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ตะกร้า M-Game | KOGame Shop</title>
+  <link rel="stylesheet" href="css/mgame-styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html"><img src="assets/brand-mark.svg" alt=""><span>KOGame Shop</span></a>
+    <nav class="nav"><a href="index.html">M-Game</a><a class="is-active" href="cart.html">ตะกร้า</a><a href="orders.html">ออเดอร์</a></nav>
+    <div class="account-nav"><span data-account></span><a class="cart-link" href="cart.html">ตะกร้า (<span data-cart-count>0</span>)</a></div>
+  </header>
+  <main class="page-layout">
+    <section class="panel">
+      <p class="eyebrow">Cart</p>
+      <h1>ตะกร้า M-Game</h1>
+      <div data-cart-list></div>
+    </section>
+    <aside class="panel">
+      <p class="eyebrow">ยอดรวม</p>
+      <div class="summary-total" data-cart-total>฿0</div>
+      <p class="muted">ตรวจรายการก่อนแจ้งชำระเงิน หากยังไม่ได้ Login ระบบจะพาไปหน้า Login ก่อน</p>
+      <div class="row-actions">
+        <a class="button secondary" href="index.html#price">เลือกเพิ่ม</a>
+        <a class="button primary hidden" href="payment.html" data-checkout>ชำระเงิน</a>
+      </div>
+    </aside>
+  </main>
+  <script src="js/mgame.js"></script>
+</body>
+</html>

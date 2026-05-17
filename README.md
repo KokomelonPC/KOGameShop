@@ -1,20 +1,18 @@
 # KOGame Shop
 
-เว็บไซต์ตัวอย่างสำหรับหน้า M-Game เท่านั้น ใช้สำหรับเลือกแนวดีไซน์ก่อนต่อระบบอื่นกลับเข้ามา
+หน้าเว็บขาย M-Game แบบ Arcade Night พร้อมระบบเดโม:
 
-## ตัวอย่างดีไซน์ 5 แบบ
+- Login/Register ด้วย `localStorage`
+- ตะกร้า M-Game
+- แจ้งชำระเงินพร้อมแนบสลิป
+- ติดตามออเดอร์แบบเดโม
 
-- `index.html` - 01 Neon Market
-- `style-premium.html` - 02 Premium Desk
-- `style-market.html` - 03 Marketplace
-- `style-arcade.html` - 04 Arcade Night
-- `style-clean.html` - 05 Clean Pro
+ไฟล์หลัก:
 
-## ไฟล์หลัก
-
-- `css/mgame-styles.css` ธีมและ layout สำหรับทั้ง 5 แบบ
-- `js/mgame.js` ข้อมูลสินค้า M-Game และการแสดงผลรายการ
-- `assets/` รูปประกอบและโลโก้เดิม
-- `CNAME` โดเมน `kogameshop.com`
-
-ตอนนี้ตั้งใจให้เว็บเหลือเฉพาะ M-Game ก่อน ส่วนระบบ Login, Cart, Payment, Topup และบริการอื่น สามารถค่อยเพิ่มกลับหลังเลือกสไตล์หลักแล้ว
+- `index.html` หน้าแรกขาย M-Game
+- `login.html`, `register.html` ระบบบัญชีเดโม
+- `cart.html` ตะกร้าสินค้า
+- `payment.html` แจ้งชำระเงิน
+- `orders.html` ติดตามออเดอร์
+- `css/mgame-styles.css` ธีม Arcade Night
+- `js/mgame.js` ข้อมูล M-Game และระบบร้าน
