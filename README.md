@@ -1,24 +1,20 @@
 # KOGame Shop
 
-เว็บขายเงินในเกมแบบ static สำหรับเปิดใช้งานจากไฟล์ `index.html` ได้ทันที
+เว็บไซต์ตัวอย่างสำหรับหน้า M-Game เท่านั้น ใช้สำหรับเลือกแนวดีไซน์ก่อนต่อระบบอื่นกลับเข้ามา
 
-## สิ่งที่เพิ่มในเวอร์ชันนี้
+## ตัวอย่างดีไซน์ 5 แบบ
 
-- ดีไซน์หน้าร้านใหม่ให้เป็นเว็บขายของมากขึ้น
-- ระบบ Login/Register แบบเดโมด้วย `localStorage`
-- ระบบสินค้า ตะกร้า ชำระเงิน และติดตามออเดอร์
-- หน้าชำระเงินพร้อมบัญชีธนาคาร QR พร้อมเพย์ และ TrueMoney
-- ข้อความไทยถูกเขียนใหม่เป็น UTF-8 อ่านได้ปกติ
+- `index.html` - 01 Neon Market
+- `style-premium.html` - 02 Premium Desk
+- `style-market.html` - 03 Marketplace
+- `style-arcade.html` - 04 Arcade Night
+- `style-clean.html` - 05 Clean Pro
 
-## ไฟล์สำคัญ
+## ไฟล์หลัก
 
-- `index.html` หน้าร้าน
-- `m-game.html`, `topup.html`, `exchange.html`, `other.html` หน้าหมวดสินค้า
-- `cart.html` ตะกร้าสินค้า
-- `payment.html` แจ้งโอนเงิน
-- `orders.html` ติดตามคำสั่งซื้อ
-- `login.html`, `register.html` ระบบบัญชี
-- `js/app.js` ข้อมูลสินค้าและระบบร้านฝั่ง browser
-- `css/styles.css` ธีมและ layout
+- `css/mgame-styles.css` ธีมและ layout สำหรับทั้ง 5 แบบ
+- `js/mgame.js` ข้อมูลสินค้า M-Game และการแสดงผลรายการ
+- `assets/` รูปประกอบและโลโก้เดิม
+- `CNAME` โดเมน `kogameshop.com`
 
-> ระบบนี้เป็นเดโมฝั่ง browser ถ้าต้องการใช้งานจริงให้เชื่อม Firebase Auth, Google Apps Script หรือฐานข้อมูลสำหรับเก็บออเดอร์และสลิปถาวร
+ตอนนี้ตั้งใจให้เว็บเหลือเฉพาะ M-Game ก่อน ส่วนระบบ Login, Cart, Payment, Topup และบริการอื่น สามารถค่อยเพิ่มกลับหลังเลือกสไตล์หลักแล้ว

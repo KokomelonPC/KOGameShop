@@ -3,103 +3,100 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>KOGame Shop | ร้านขายเงินในเกม</title>
-  <meta name="description" content="KOGame Shop ร้านขายเงินในเกม เติมเกม ตัวกลางแลกเปลี่ยนไอเทม พร้อมระบบตะกร้าและแจ้งชำระเงิน">
-  <link rel="stylesheet" href="css/styles.css">
+  <title>KOGame Shop | M-Game Neon Market</title>
+  <meta name="description" content="KOGame Shop หน้า M-Game สำหรับขายเงินในเกม พร้อมตัวอย่างดีไซน์ 5 แบบ">
+  <link rel="stylesheet" href="css/mgame-styles.css">
 </head>
-<body>
-  <header class="topbar">
-    <a class="brand" href="index.html" aria-label="KOGame Shop">
-      <img src="assets/brand-mark.svg" alt="">
-      <span>KOGame Shop</span>
-    </a>
-    <nav class="main-nav" aria-label="เมนูหลัก">
-      <a class="is-active" href="index.html">หน้าร้าน</a>
-      <a href="m-game.html">M-Game</a>
-      <a href="topup.html">เติมเกม</a>
-      <a href="exchange.html">ตัวกลางไอเทม</a>
-      <a href="other.html">บริการอื่น</a>
-      <a href="orders.html">ออเดอร์</a>
-    </nav>
-    <div class="account-nav">
-      <span id="account-status"></span>
-      <a class="cart-link" href="cart.html">ตะกร้า (<span data-cart-count>0</span>)</a>
-    </div>
-  </header>
-
-  <main>
-    <section class="hero">
-      <div class="hero-copy">
-        <p class="eyebrow">KOGame Shop</p>
-        <h1>ร้านขายเงินในเกมที่สั่งซื้อได้เหมือนเว็บช็อปจริง</h1>
-        <p class="lead">เลือกแพ็กเงินในเกม เติมเกม หรือบริการตัวกลาง เพิ่มลงตะกร้า แล้วแจ้งชำระเงินพร้อมสลิปได้ในขั้นตอนเดียว เหมาะกับการต่อยอดเป็นร้านออนไลน์เต็มระบบ</p>
-        <div class="hero-actions">
-          <a class="button primary" href="m-game.html">ดูราคา M-Game</a>
-          <a class="button secondary" href="cart.html">เปิดตะกร้า</a>
-        </div>
-      </div>
-      <aside class="hero-panel" aria-label="ภาพรวมร้าน">
-        <div class="hero-visual">
-          <img src="assets/hero-console.svg" alt="KOGame Shop">
-        </div>
-        <div class="quick-stats">
-          <div><strong>24 ชม.</strong><span>รับออเดอร์ได้ทั้งวัน</span></div>
-          <div><strong>4 หมวด</strong><span>แยกบริการชัดเจน</span></div>
-          <div><strong>Cart</strong><span>สั่งซื้อหลายรายการ</span></div>
-        </div>
-      </aside>
-    </section>
-
-    <section class="section alt">
-      <div class="section-heading">
-        <p class="eyebrow">บริการหลัก</p>
-        <h2>เลือกหมวดที่ต้องการ</h2>
-      </div>
-      <div class="grid-4">
-        <a class="card" href="m-game.html">
-          <div class="service-icon">M</div>
-          <h3>M-Game</h3>
-          <p>ขายเงินในเกมและ M-Game พร้อมราคาและสต็อก</p>
-        </a>
-        <a class="card" href="topup.html">
-          <div class="service-icon">฿</div>
-          <h3>เติมเกม</h3>
-          <p>เติมเพชร คูปอง และแพ็กเกมยอดนิยม</p>
-        </a>
-        <a class="card" href="exchange.html">
-          <div class="service-icon">↔</div>
-          <h3>ตัวกลางไอเทม</h3>
-          <p>ช่วยดูแลการแลกเปลี่ยนไอเทมและบัญชีให้ปลอดภัย</p>
-        </a>
-        <a class="card" href="other.html">
-          <div class="service-icon">+</div>
-          <h3>บริการอื่น</h3>
-          <p>รับแรงค์ รับเควส และงานเสริมตามรายละเอียดเกม</p>
-        </a>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="section-heading">
-        <p class="eyebrow">รายการแนะนำ</p>
-        <h2>สินค้าขายดีของร้าน</h2>
-      </div>
-      <div class="grid-3" id="product-grid"></div>
-    </section>
-
-    <section class="contact-band">
-      <div>
-        <p class="eyebrow">ติดต่อร้าน</p>
-        <h2>ต้องการราคาพิเศษหรือเกมที่ไม่มีในรายการ ทักแอดมินได้เลย</h2>
-      </div>
+<body class="theme-neon">
+  <div class="site-shell">
+    <header class="topbar">
+      <a class="brand" href="index.html">
+        <img src="assets/brand-mark.svg" alt="">
+        <span>KOGame Shop</span>
+      </a>
+      <nav class="nav" aria-label="เมนูหลัก">
+        <a class="is-active" href="#mgame">M-Game</a>
+        <a href="#price">ราคา</a>
+        <a href="#how">วิธีสั่งซื้อ</a>
+      </nav>
       <a class="button primary" href="https://line.me/" target="_blank" rel="noreferrer">ติดต่อ LINE</a>
-    </section>
-  </main>
+    </header>
 
-  <footer class="footer">
-    <span>KOGame Shop</span>
-    <span>ขายเงินในเกม เติมเกม และตัวกลางแลกเปลี่ยนไอเทม</span>
-  </footer>
-  <script src="js/app.js"></script>
+    <nav class="style-nav" aria-label="ตัวอย่างสไตล์">
+      <span>เลือกตัวอย่าง:</span>
+      <a class="is-active" href="index.html">01 Neon Market</a>
+      <a href="style-premium.html">02 Premium Desk</a>
+      <a href="style-market.html">03 Marketplace</a>
+      <a href="style-arcade.html">04 Arcade Night</a>
+      <a href="style-clean.html">05 Clean Pro</a>
+    </nav>
+
+    <main id="mgame">
+      <section class="hero">
+        <div>
+          <p class="eyebrow">ตัวอย่าง 01 | Neon Market</p>
+          <h1>ขาย M-Game แบบเร็ว ชัด และดูน่าเชื่อถือ</h1>
+          <p class="lead">หน้าเดียวสำหรับขายเงินในเกมโดยเฉพาะ ลูกค้าเห็นราคา สต็อก และกดทัก LINE เพื่อสั่งซื้อได้ทันที เหมาะกับร้านเกมที่ต้องการความรู้สึกทันสมัยและคึกคัก</p>
+          <div class="hero-actions">
+            <a class="button primary" href="#price">ดูราคา M-Game</a>
+            <a class="button secondary" href="#stock">เช็กสต็อก</a>
+          </div>
+        </div>
+        <aside class="hero-panel">
+          <div class="hero-art">
+            <img src="assets/hero-console.svg" alt="KOGame M-Game">
+          </div>
+          <div class="ticker">
+            <div><strong>24 ชม.</strong><span>รับออเดอร์ทุกวัน</span></div>
+            <div><strong>3 เกม</strong><span>รายการหลักพร้อมขาย</span></div>
+            <div><strong>LINE</strong><span>คุยรายละเอียดก่อนโอน</span></div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="section alt" id="price">
+        <div class="section-heading">
+          <p class="eyebrow">M-Game Catalog</p>
+          <h2>แพ็กเงินในเกมแนะนำ</h2>
+          <p class="muted">ราคาในหน้านี้เป็นตัวอย่าง สามารถแก้รายการจริงได้ที่ไฟล์ js/mgame.js</p>
+        </div>
+        <div class="product-grid" data-products></div>
+      </section>
+
+      <section class="section" id="stock">
+        <div class="section-heading">
+          <p class="eyebrow">Stock Board</p>
+          <h2>เช็กราคาและสต็อกแบบรวดเร็ว</h2>
+        </div>
+        <div class="stock-grid" data-stock></div>
+      </section>
+
+      <section class="section alt" id="how">
+        <div class="section-heading">
+          <p class="eyebrow">Order Flow</p>
+          <h2>วิธีสั่งซื้อ M-Game</h2>
+        </div>
+        <div class="flow-grid">
+          <article class="flow-card"><div class="flow-step">1</div><h3>เลือกเกมและจำนวน</h3><p class="muted">ดูราคา สต็อก และเลือกรายการที่ต้องการ</p></article>
+          <article class="flow-card"><div class="flow-step">2</div><h3>ทัก LINE เพื่อยืนยัน</h3><p class="muted">ส่งชื่อเกม เซิร์ฟเวอร์ และจำนวนที่ต้องการซื้อ</p></article>
+          <article class="flow-card"><div class="flow-step">3</div><h3>โอนแล้วรับของ</h3><p class="muted">แอดมินตรวจยอดและจัดส่งตามขั้นตอนของแต่ละเกม</p></article>
+        </div>
+      </section>
+
+      <section class="contact-band">
+        <div>
+          <p class="eyebrow">พร้อมขาย M-Game</p>
+          <h2>ต้องการให้หน้าไหนเป็นตัวจริง เลือกแบบที่ชอบแล้วผมต่อยอดให้ได้เลย</h2>
+        </div>
+        <a class="button primary" href="https://line.me/" target="_blank" rel="noreferrer">ทักแอดมิน</a>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>KOGame Shop</span>
+      <span>M-Game only preview</span>
+    </footer>
+  </div>
+  <script src="js/mgame.js"></script>
 </body>
 </html>
