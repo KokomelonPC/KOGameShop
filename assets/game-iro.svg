@@ -1,0 +1,11 @@
+<svg width="900" height="560" viewBox="0 0 900 560" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="900" height="560" fill="#E5FBF3"/>
+  <rect x="78" y="70" width="744" height="420" rx="36" fill="#FFFFFF" stroke="#D9E4F2" stroke-width="8"/>
+  <path d="M195 359L304 168L414 359H195Z" fill="#11B981"/>
+  <path d="M314 359L424 209L566 359H314Z" fill="#2376FF"/>
+  <circle cx="586" cy="170" r="54" fill="#F8BF2C"/>
+  <rect x="555" y="295" width="160" height="42" rx="21" fill="#E6F0FF"/>
+  <rect x="555" y="356" width="116" height="42" rx="21" fill="#E6F0FF"/>
+  <text x="165" y="444" fill="#182436" font-family="Arial, sans-serif" font-size="78" font-weight="800">IRO</text>
+  <text x="319" y="444" fill="#64748B" font-family="Arial, sans-serif" font-size="34" font-weight="700">M-Game Stock</text>
+</svg>

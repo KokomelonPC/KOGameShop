@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ตะกร้าสินค้า | KOGame Shop</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html"><img src="assets/brand-mark.svg" alt=""><span>KOGame Shop</span></a>
+    <nav class="main-nav">
+      <a href="index.html">หน้าร้าน</a><a href="m-game.html">M-Game</a><a href="topup.html">เติมเกม</a><a href="exchange.html">ตัวกลางไอเทม</a><a href="other.html">บริการอื่น</a><a href="orders.html">ออเดอร์</a>
+    </nav>
+    <div class="account-nav"><span id="account-status"></span><a class="cart-link" href="cart.html">ตะกร้า (<span data-cart-count>0</span>)</a></div>
+  </header>
+  <main class="cart-layout">
+    <section class="table-panel">
+      <div class="toolbar">
+        <div><p class="eyebrow">Cart</p><h2>ตะกร้าสินค้า</h2></div>
+        <a class="button secondary" href="m-game.html">เลือกสินค้าเพิ่ม</a>
+      </div>
+      <div id="cart-list"></div>
+    </section>
+    <aside class="summary-panel">
+      <p class="eyebrow">สรุปรายการ</p>
+      <h2 id="cart-total">฿0</h2>
+      <p>ยอดนี้ยังไม่รวมส่วนลดพิเศษหรือค่าบริการเพิ่มเติมที่ตกลงกับแอดมิน</p>
+      <div class="action-row">
+        <a id="checkout-button" class="button primary hidden" href="payment.html">ไปชำระเงิน</a>
+        <a class="button secondary" href="orders.html">ดูออเดอร์</a>
+      </div>
+    </aside>
+  </main>
+  <footer class="footer"><span>KOGame Shop</span><span>ตะกร้าสินค้า</span></footer>
+  <script src="js/app.js"></script>
+</body>
+</html>

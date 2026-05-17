@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Register | KOGame Shop</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html"><img src="assets/brand-mark.svg" alt=""><span>KOGame Shop</span></a>
+    <nav class="main-nav"><a href="index.html">หน้าร้าน</a><a href="cart.html">ตะกร้า</a><a href="orders.html">ออเดอร์</a></nav>
+    <div class="account-nav"><a class="cart-link" href="cart.html">ตะกร้า (<span data-cart-count>0</span>)</a></div>
+  </header>
+  <main class="auth-layout">
+    <section class="auth-intro">
+      <p class="eyebrow">Create Account</p>
+      <h1>สมัครสมาชิก KOGame Shop</h1>
+      <p>สร้างบัญชีสำหรับทดสอบระบบร้านค้า ตะกร้า และการแจ้งชำระเงิน</p>
+      <ul>
+        <li>ใช้ชื่อสำหรับแสดงบนเมนู</li>
+        <li>รองรับ flow เหมือนเว็บขายของ</li>
+        <li>พร้อมต่อยอดเป็น Firebase Auth ได้</li>
+      </ul>
+    </section>
+    <section class="auth-box">
+      <h2>Register</h2>
+      <p class="muted">กรอกข้อมูลเพื่อสร้างบัญชี</p>
+      <form id="register-form">
+        <label for="name">ชื่อของคุณ</label>
+        <input id="name" type="text" placeholder="ชื่อของคุณ" required>
+        <label for="email">Email</label>
+        <input id="email" type="email" placeholder="Email" required>
+        <label for="password">Password</label>
+        <input id="password" type="password" placeholder="Password" minlength="6" required>
+        <label for="confirmPassword">Confirm Password</label>
+        <input id="confirmPassword" type="password" placeholder="Confirm Password" minlength="6" required>
+        <button class="button primary" type="submit">Register</button>
+      </form>
+      <p class="muted">มีบัญชีแล้ว? <a href="login.html"><strong>Login</strong></a></p>
+    </section>
+  </main>
+  <script src="js/app.js"></script>
+</body>
+</html>

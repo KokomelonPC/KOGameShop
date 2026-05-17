@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login | KOGame Shop</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html"><img src="assets/brand-mark.svg" alt=""><span>KOGame Shop</span></a>
+    <nav class="main-nav"><a href="index.html">หน้าร้าน</a><a href="cart.html">ตะกร้า</a><a href="orders.html">ออเดอร์</a></nav>
+    <div class="account-nav"><a class="cart-link" href="cart.html">ตะกร้า (<span data-cart-count>0</span>)</a></div>
+  </header>
+  <main class="auth-layout">
+    <section class="auth-intro">
+      <p class="eyebrow">Secure Access</p>
+      <h1>เข้าสู่ระบบเพื่อสั่งซื้อได้สะดวกขึ้น</h1>
+      <p>ระบบเดโมนี้จำบัญชีไว้ในเครื่องผู้ใช้ เหมาะสำหรับทดสอบ flow ร้านค้า ก่อนต่อ Firebase/Auth จริงในขั้นถัดไป</p>
+      <ul>
+        <li>เห็นชื่อบัญชีบนเมนูร้าน</li>
+        <li>ใช้ตะกร้าและแจ้งชำระเงินได้ครบ</li>
+        <li>ย้อนกลับมาดูสถานะออเดอร์ได้</li>
+      </ul>
+    </section>
+    <section class="auth-box">
+      <h2>Login</h2>
+      <p class="muted">กรอกอีเมลและรหัสผ่าน</p>
+      <form id="login-form">
+        <label for="email">Email</label>
+        <input id="email" type="email" placeholder="Email" required>
+        <label for="password">Password</label>
+        <input id="password" type="password" placeholder="Password" required>
+        <button class="button primary" type="submit">Login</button>
+      </form>
+      <p class="muted">ยังไม่มีบัญชี? <a href="register.html"><strong>สมัครสมาชิก</strong></a></p>
+    </section>
+  </main>
+  <script src="js/app.js"></script>
+</body>
+</html>

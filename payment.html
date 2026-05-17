@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>แจ้งชำระเงิน | KOGame Shop</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html"><img src="assets/brand-mark.svg" alt=""><span>KOGame Shop</span></a>
+    <nav class="main-nav">
+      <a href="index.html">หน้าร้าน</a><a href="m-game.html">M-Game</a><a href="topup.html">เติมเกม</a><a href="exchange.html">ตัวกลางไอเทม</a><a href="other.html">บริการอื่น</a><a href="orders.html">ออเดอร์</a>
+    </nav>
+    <div class="account-nav"><span id="account-status"></span><a class="cart-link" href="cart.html">ตะกร้า (<span data-cart-count>0</span>)</a></div>
+  </header>
+  <main class="payment-layout">
+    <section>
+      <div class="section-heading">
+        <p class="eyebrow">Payment</p>
+        <h2>แจ้งชำระเงิน</h2>
+        <p class="muted">โอนตามช่องทางที่สะดวก แล้วแนบสลิปเพื่อเก็บออเดอร์ไว้ในระบบ</p>
+      </div>
+      <div class="payment-methods">
+        <article class="payment-card">
+          <div class="bank-row">
+            <div class="bank-logo"><img src="assets/ttb-logo.png" alt="TTB"></div>
+            <div>
+              <h3>ธนาคารทหารไทยธนชาต (TTB)</h3>
+              <p>เลขบัญชี: <strong>921-7-80960-8</strong><br>ชื่อบัญชี: นาย กัมพล องการ</p>
+            </div>
+          </div>
+        </article>
+        <article class="payment-card">
+          <div class="bank-row">
+            <div class="bank-logo"><img src="assets/kasikorn-logo.png" alt="Kasikornbank"></div>
+            <div>
+              <h3>ธนาคารกสิกรไทย (KBank)</h3>
+              <p>เลขบัญชี: <strong>554-2-31395-3</strong><br>ชื่อบัญชี: นาย กัมพล องการ</p>
+            </div>
+          </div>
+        </article>
+        <div class="qr-grid">
+          <article class="qr-box">
+            <img src="assets/promptpay-qr.jpg" alt="QR Code พร้อมเพย์">
+            <div><strong>QR พร้อมเพย์</strong><br><span class="muted">สแกนเพื่อชำระเงิน</span></div>
+          </article>
+          <article class="qr-box">
+            <img src="assets/truemoney-qr.jpg" alt="QR Code TrueMoney">
+            <div><strong>QR TrueMoney</strong><br><span class="muted">สแกนชำระผ่านวอลเล็ต</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <aside class="summary-panel">
+      <p class="eyebrow">สรุปรายการ</p>
+      <div id="payment-summary"></div>
+      <form id="payment-form">
+        <label for="name">ชื่อผู้โอน</label>
+        <input id="name" type="text" placeholder="กรอกชื่อผู้โอน" required>
+
+        <label for="amount">ยอดโอน (บาท)</label>
+        <input id="amount" type="number" min="1" placeholder="ยอดโอน" required>
+
+        <label>ช่องทางชำระเงิน</label>
+        <label><input type="radio" name="paymentMethod" value="โอน TTB" checked> โอน TTB</label>
+        <label><input type="radio" name="paymentMethod" value="โอน KBank"> โอน KBank</label>
+        <label><input type="radio" name="paymentMethod" value="QR พร้อมเพย์"> QR พร้อมเพย์</label>
+        <label><input type="radio" name="paymentMethod" value="QR TrueMoney"> QR TrueMoney</label>
+
+        <label for="note">รายละเอียดเพิ่มเติม</label>
+        <textarea id="note" placeholder="ชื่อตัวละคร เซิร์ฟเวอร์ หรือรายละเอียดงาน"></textarea>
+
+        <label for="slip">แนบสลิป</label>
+        <input id="slip" type="file" accept="image/*" required>
+
+        <button class="button primary" type="submit">ส่งแจ้งโอน</button>
+      </form>
+    </aside>
+  </main>
+  <footer class="footer"><span>KOGame Shop</span><span>แจ้งชำระเงิน</span></footer>
+  <script src="js/app.js"></script>
+</body>
+</html>

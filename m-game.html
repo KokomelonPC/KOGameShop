@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>M-Game | KOGame Shop</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-category="mgame">
+  <header class="topbar">
+    <a class="brand" href="index.html"><img src="assets/brand-mark.svg" alt=""><span>KOGame Shop</span></a>
+    <nav class="main-nav">
+      <a href="index.html">หน้าร้าน</a><a class="is-active" href="m-game.html">M-Game</a><a href="topup.html">เติมเกม</a><a href="exchange.html">ตัวกลางไอเทม</a><a href="other.html">บริการอื่น</a><a href="orders.html">ออเดอร์</a>
+    </nav>
+    <div class="account-nav"><span id="account-status"></span><a class="cart-link" href="cart.html">ตะกร้า (<span data-cart-count>0</span>)</a></div>
+  </header>
+  <main>
+    <section class="section">
+      <div class="section-heading">
+        <p class="eyebrow">ราคาอัปเดต</p>
+        <h2>ราคา Sell และสต็อก M-Game</h2>
+        <p class="muted">กดซื้อเพื่อเพิ่มลงตะกร้า แล้วไปแจ้งโอนในหน้าชำระเงิน</p>
+      </div>
+      <div class="toolbar">
+        <div><strong>รายการ M-Game</strong><br><span class="muted">ราคาตัวอย่างสามารถปรับในไฟล์ js/app.js</span></div>
+        <a class="button secondary" href="cart.html">ดูตะกร้า</a>
+      </div>
+      <div class="table-panel table-wrap">
+        <table>
+          <thead><tr><th>รูป</th><th>เกม</th><th>ราคา</th><th>สต็อก</th><th>สถานะ</th><th>สั่งซื้อ</th></tr></thead>
+          <tbody id="m-game-table"></tbody>
+        </table>
+      </div>
+    </section>
+    <section class="section alt">
+      <div class="section-heading"><p class="eyebrow">แพ็กสินค้า</p><h2>เลือกซื้อแบบการ์ดสินค้า</h2></div>
+      <div class="grid-3" id="product-grid"></div>
+    </section>
+  </main>
+  <footer class="footer"><span>KOGame Shop</span><span>หน้า M-Game</span></footer>
+  <script src="js/app.js"></script>
+</body>
+</html>
