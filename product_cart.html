@@ -48,7 +48,7 @@
         <aside class="panel summary-box">
           <h2>สรุปยอด</h2>
           <div class="summary-line"><span>จำนวนสินค้า</span><strong id="totalQty">0</strong></div>
-          <div class="summary-line"><span>ยอดสินค้า</span><strong id="subtotalAmount">0 บาท</strong></div><div class="summary-line"><span>ค่าส่ง</span><strong id="shippingFee">0 บาท</strong></div><div class="summary-line summary-total"><span>ยอดรวม</span><strong id="totalAmount">0 บาท</strong></div>
+          <div class="summary-line"><span>ยอดสินค้า</span><strong id="subtotalAmount">0 บาท</strong></div><div class="summary-line shipping-line"><span>ค่าส่ง</span><strong id="shippingFee">0 บาท</strong></div><div class="summary-line summary-total"><span>ยอดรวม</span><strong id="totalAmount">0 บาท</strong></div>
           <button class="primary" type="button" onclick="checkoutCart()">ไปชำระเงิน</button>
           <a class="secondary" href="kogame_products.html">เลือกสินค้าเพิ่ม</a>
           <button class="secondary" type="button" onclick="clearCart()">ล้างตะกร้า</button>
@@ -61,7 +61,7 @@
 
 <script>
 const CART_KEY = "kogameProductCart";
-const SHIPPING_FEE = 50;
+const SHIPPING_FEE = 0;
 const FREE_SHIPPING_MINIMUM = 1000;
 
 function getCart() {

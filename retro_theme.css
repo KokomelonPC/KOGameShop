@@ -387,9 +387,64 @@ hr,
 .payment-card,
 .bank-card-list,
 .bank-row,
+.box,
+.method-select,
+.method-options label,
 .qr-frame,
 .qr-caption,
 .qr-missing { color: #e8f2ff !important; }
+
+.box {
+  background: rgba(11, 17, 36, 0.96) !important;
+  border: 1px solid rgba(39, 231, 255, 0.28) !important;
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.38) !important;
+  backdrop-filter: none !important;
+}
+
+.box h2,
+.box label,
+.method-select h3 {
+  color: #ffffff !important;
+}
+
+.box .sub {
+  color: #c7d6f4 !important;
+}
+
+.box input,
+.box textarea {
+  color: #ffffff !important;
+  background: #151a2d !important;
+  border-color: rgba(104, 129, 255, 0.44) !important;
+}
+
+.box input::placeholder,
+.box textarea::placeholder {
+  color: #b9c7e6 !important;
+}
+
+.box input[type="file"]::file-selector-button {
+  color: #07101f;
+  background: #27e7ff;
+  border: 0;
+  border-radius: 6px;
+  padding: 7px 12px;
+  font-weight: 800;
+}
+
+.method-select {
+  background: rgba(7, 9, 20, 0.72) !important;
+  border-color: rgba(39, 231, 255, 0.24) !important;
+}
+
+.method-options label {
+  background: #151a2d !important;
+  border-color: rgba(104, 129, 255, 0.38) !important;
+}
+
+.method-options input {
+  accent-color: #27e7ff;
+}
 
 .payment-card h3,
 .payment-card p,
@@ -420,6 +475,19 @@ hr,
 .bank-logo-fallback { color: #27e7ff !important; }
 
 .qr-frame { background: #f8fafc !important; }
+
+.qr-frame,
+.qr-frame img,
+.bank-logo img,
+.product-card img,
+.product-photo img {
+  opacity: 1 !important;
+  filter: none !important;
+}
+
+.shipping-line {
+  display: none !important;
+}
 
 @media (max-width: 900px) {
   .sidebar {

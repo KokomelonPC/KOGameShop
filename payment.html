@@ -382,6 +382,7 @@ button:disabled { background: #94a3b8; cursor: not-allowed; }
   const productAmount = params.get("amount") || "";
   const productSubtotal = params.get("subtotal") || "";
   const productShipping = params.get("shipping") || "";
+  const productPayableAmount = productSubtotal || productAmount;
   const isCartPayment = productId.includes(",") || productId === "CART";
   const itemName = isProductPayment ? (productItem || "สินค้า KOGame") : (set ? `${isRenewal ? "ต่ออายุชุดคอม" : "ชุดคอม"} ${set}` : "-");
   document.getElementById("itemName").innerText = itemName;
@@ -390,9 +391,9 @@ button:disabled { background: #94a3b8; cursor: not-allowed; }
     document.getElementById("paymentTitle").innerText = "แจ้งโอนเงินเพื่อสั่งซื้อสินค้า";
     document.getElementById("paymentDescription").innerText =
       "กรอกข้อมูลการโอนเงินสำหรับสั่งซื้อสินค้า แล้วแนบสลิปเพื่อส่งให้แอดมินตรวจสอบ หลังส่งแล้วติดตามสถานะได้ที่หน้า My Orders ของสินค้า";
-    document.getElementById("amount").value = productAmount;
+    document.getElementById("amount").value = productPayableAmount;
     const shippingNote = productSubtotal
-      ? `ยอดสินค้า ${Number(productSubtotal || 0).toLocaleString("th-TH")} บาท, ค่าส่ง ${Number(productShipping || 0) === 0 ? "ฟรี" : Number(productShipping || 0).toLocaleString("th-TH") + " บาท"}, ยอดรวม ${Number(productAmount || 0).toLocaleString("th-TH")} บาท`
+      ? `ยอดสินค้า ${Number(productSubtotal || 0).toLocaleString("th-TH")} บาท, ยอดรวม ${Number(productPayableAmount || 0).toLocaleString("th-TH")} บาท`
       : "";
     document.getElementById("note").value = [
       productId ? `สั่งซื้อสินค้า ${itemName} (${productId})` : `สั่งซื้อสินค้า ${itemName}`,
