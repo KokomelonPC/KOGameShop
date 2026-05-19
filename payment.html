@@ -102,7 +102,18 @@ button:disabled { background: #94a3b8; cursor: not-allowed; }
   display: flex;
   align-items: center;
   gap: 14px;
+  padding: 14px;
   margin-bottom: 12px;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+.bank-row.ttb {
+  background: linear-gradient(135deg, rgba(247, 148, 29, 0.22), rgba(0, 123, 191, 0.22));
+  border-color: rgba(0, 174, 239, 0.34);
+}
+.bank-row.kbank {
+  background: linear-gradient(135deg, rgba(0, 153, 68, 0.24), rgba(0, 96, 48, 0.18));
+  border-color: rgba(0, 188, 95, 0.38);
 }
 .bank-logo {
   width: 58px;
@@ -129,6 +140,9 @@ button:disabled { background: #94a3b8; cursor: not-allowed; }
   margin: 0;
   font-weight: 800;
 }
+.bank-row strong {
+  color: #ffffff;
+}
 .payment-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -140,6 +154,14 @@ button:disabled { background: #94a3b8; cursor: not-allowed; }
   background: #ffffff;
   border: 1px solid rgba(226, 232, 240, 0.9);
   color: #0f172a;
+}
+.qr-frame.promptpay {
+  border-color: rgba(0, 99, 177, 0.38);
+  box-shadow: 0 0 0 3px rgba(0, 99, 177, 0.12);
+}
+.qr-frame.truemoney {
+  border-color: rgba(255, 103, 31, 0.42);
+  box-shadow: 0 0 0 3px rgba(255, 103, 31, 0.14);
 }
 .qr-frame img {
   display: block;
@@ -196,6 +218,27 @@ button:disabled { background: #94a3b8; cursor: not-allowed; }
   border: 1px solid rgba(148, 163, 184, 0.28);
   cursor: pointer;
 }
+.method-options label.method-ttb {
+  background: rgba(0, 123, 191, 0.16);
+  border-color: rgba(0, 174, 239, 0.48);
+}
+.method-options label.method-kbank {
+  background: rgba(0, 153, 68, 0.16);
+  border-color: rgba(0, 188, 95, 0.48);
+}
+.method-options label.method-promptpay {
+  background: rgba(0, 99, 177, 0.14);
+  border-color: rgba(56, 189, 248, 0.44);
+}
+.method-options label.method-truemoney {
+  background: rgba(255, 103, 31, 0.16);
+  border-color: rgba(251, 146, 60, 0.48);
+}
+.method-options label:has(input:checked) {
+  color: #ffffff;
+  border-color: #5fffe0;
+  box-shadow: 0 0 0 2px rgba(95, 255, 224, 0.22);
+}
 .method-options input {
   width: auto;
   margin: 0;
@@ -225,7 +268,7 @@ button:disabled { background: #94a3b8; cursor: not-allowed; }
 
       <div class="payment-options">
         <div class="payment-card bank-card-list">
-          <div class="bank-row">
+          <div class="bank-row ttb">
             <div class="bank-logo" aria-label="TTB">
               <img src="ttb-logo.png" alt="TTB" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
               <span class="bank-logo-fallback">TTB</span>
@@ -237,7 +280,7 @@ button:disabled { background: #94a3b8; cursor: not-allowed; }
             </div>
           </div>
 
-          <div class="bank-row">
+          <div class="bank-row kbank">
             <div class="bank-logo" aria-label="Kasikornbank">
               <img src="kasikorn-logo.png" alt="Kasikornbank" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
               <span class="bank-logo-fallback">K+</span>
@@ -251,7 +294,7 @@ button:disabled { background: #94a3b8; cursor: not-allowed; }
         </div>
 
         <div class="payment-grid">
-          <div class="qr-frame">
+          <div class="qr-frame promptpay">
             <img src="promptpay-qr.jpg" alt="QR Code พร้อมเพย์" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
             <div class="qr-missing" style="display:none;">เพิ่มไฟล์รูป QR พร้อมเพย์ชื่อ<br><strong>promptpay-qr.jpg</strong></div>
             <div class="qr-caption">
@@ -260,7 +303,7 @@ button:disabled { background: #94a3b8; cursor: not-allowed; }
             </div>
           </div>
 
-          <div class="qr-frame">
+          <div class="qr-frame truemoney">
             <img src="truemoney-qr.jpg" alt="QR Code TrueMoney" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
             <div class="qr-missing" style="display:none;">เพิ่มไฟล์รูป QR TrueMoney ชื่อ<br><strong>truemoney-qr.jpg</strong></div>
             <div class="qr-caption">
@@ -279,10 +322,10 @@ button:disabled { background: #94a3b8; cursor: not-allowed; }
       <div class="method-select">
         <h3>เลือกช่องทางชำระเงิน</h3>
         <div class="method-options">
-          <label><input type="radio" name="paymentMethod" value="โอนธนาคารทหารไทยธนชาต (TTB)" checked> โอนธนาคารทหารไทยธนชาต (TTB)</label>
-          <label><input type="radio" name="paymentMethod" value="โอนธนาคารกสิกรไทย (KBank)"> โอนธนาคารกสิกรไทย (KBank)</label>
-          <label><input type="radio" name="paymentMethod" value="QR พร้อมเพย์"> QR Code พร้อมเพย์</label>
-          <label><input type="radio" name="paymentMethod" value="QR TrueMoney"> QR Code TrueMoney</label>
+          <label class="method-ttb"><input type="radio" name="paymentMethod" value="โอนธนาคารทหารไทยธนชาต (TTB)" checked> โอนธนาคารทหารไทยธนชาต (TTB)</label>
+          <label class="method-kbank"><input type="radio" name="paymentMethod" value="โอนธนาคารกสิกรไทย (KBank)"> โอนธนาคารกสิกรไทย (KBank)</label>
+          <label class="method-promptpay"><input type="radio" name="paymentMethod" value="QR พร้อมเพย์"> QR Code พร้อมเพย์</label>
+          <label class="method-truemoney"><input type="radio" name="paymentMethod" value="QR TrueMoney"> QR Code TrueMoney</label>
         </div>
       </div>
       <label for="name">ชื่อผู้โอน</label>

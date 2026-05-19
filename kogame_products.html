@@ -698,11 +698,11 @@ async function loadProducts() {
 
       return `
         <article class="product-card">
-          <a class="product-image-link" href="product_detail.html?productId=${encodeURIComponent(productId)}" aria-label="ดูรายละเอียด ${escapeHTML(product.name || "สินค้า KOGame")}">
+          <a class="product-image-link" href="product_detail.html?v=20260520-qty2&productId=${encodeURIComponent(productId)}" aria-label="ดูรายละเอียด ${escapeHTML(product.name || "สินค้า KOGame")}">
             <img src="${escapeHTML(getProductImageUrl(product))}" alt="${escapeHTML(product.name || "สินค้า KOGame")}" loading="lazy" onerror="this.style.display='none';">
           </a>
           <div class="product-card-body">
-            <h3><a href="product_detail.html?productId=${encodeURIComponent(productId)}">${escapeHTML(product.name || "ไม่มีชื่อสินค้า")}</a></h3>
+            <h3><a href="product_detail.html?v=20260520-qty2&productId=${encodeURIComponent(productId)}">${escapeHTML(product.name || "ไม่มีชื่อสินค้า")}</a></h3>
             <p>${escapeHTML(product.description || "ยังไม่มีรายละเอียดสินค้า")}</p>
             <div class="product-card-meta">
               <span class="product-price">${Number(product.price || 0).toLocaleString("th-TH")} บาท</span>
