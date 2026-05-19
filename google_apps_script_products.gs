@@ -1,7 +1,7 @@
 ﻿const PRODUCT_SPREADSHEET_ID = "1iK61-jLOr6OERjQYiSRju3kzX5cVrGzSLmT2TSR-4SA";
 const PRODUCT_SHEET_NAME = "Item ForSell";
 const PRODUCT_ORDER_SHEET_NAME = "ProductOrders";
-const PRODUCT_IMAGE_FOLDER_ID = "1Nj1e3sbJqGg-kNqYWeIhYMNbsUTev6X1";
+const PRODUCT_IMAGE_FOLDER_ID = "1ZPf1jeYHKHfVL-nqeHLQrzhM3ezIofL5";
 
 function doGet(e) {
   e = e || { parameter: {} };
