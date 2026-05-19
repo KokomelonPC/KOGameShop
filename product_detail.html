@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>KOIOT Shop | รายละเอียดสินค้า</title>
+<title>KOGame Shop | รายละเอียดสินค้า</title>
 <link rel="icon" type="image/png" href="favicon.png">
 <style>
 :root{--bg-sidebar:linear-gradient(180deg,rgba(15,23,42,.98),rgba(30,41,59,.96));--text-main:#0f172a;--text-soft:#475569;--text-muted:#94a3b8;--line-soft:rgba(148,163,184,.18);--brand-blue:#2563eb;--brand-green:#10b981;--shadow-xl:0 28px 70px rgba(15,23,42,.18);--shadow-md:0 12px 28px rgba(15,23,42,.08)}
@@ -16,13 +16,13 @@
 <body>
 <div class="layout">
   <aside class="sidebar">
-    <div class="brand-box"><h2>🛒 KOIOT Shop</h2><p>ดูรายละเอียดสินค้า ราคา จำนวนคงเหลือ และเลือกสั่งซื้อได้จากหน้านี้</p></div>
+    <div class="brand-box"><h2>🛒 KOGame Shop</h2><p>ดูรายละเอียดสินค้า ราคา จำนวนคงเหลือ และเลือกสั่งซื้อได้จากหน้านี้</p></div>
     <nav class="menu">
       <p class="menu-label">สินค้าและบริการของเรา</p>
       
-      <button class="menu-toggle active" type="button">🛒 สินค้า KOIOT Shop <span>▴</span></button>
+      <button class="menu-toggle active" type="button">🛒 สินค้า KOGame Shop <span>▴</span></button>
       <div class="product-submenu">
-        <a href="koiot_products.html">หน้าแรกสินค้า</a>
+        <a href="kogame_products.html">หน้าแรกสินค้า</a>
         <a href="product_cart.html">ตะกร้าสินค้า</a>
         <a href="product_account.html">My Account</a>
         <a href="product_orders.html">My Orders</a>
@@ -43,7 +43,7 @@
       <section class="panel" id="detailPanel">
         <div class="empty-state">กำลังโหลดรายละเอียดสินค้า...</div>
       </section>
-      <footer>KOIOT Shop</footer>
+      <footer>KOGame Shop</footer>
     </div>
   </main>
 </div>
@@ -138,20 +138,20 @@ function addProductToCart() {
     return;
   }
 
-  const cart = JSON.parse(localStorage.getItem("koiotProductCart") || "[]");
+  const cart = JSON.parse(localStorage.getItem("kogameProductCart") || "[]");
   const existing = cart.find(item => item.productId === productId);
   if (existing) {
     existing.quantity = Number(existing.quantity || 1) + 1;
   } else {
     cart.push({
       productId,
-      name: currentProduct.name || "สินค้า KOIOT",
+      name: currentProduct.name || "สินค้า KOGame",
       price: Number(currentProduct.price || 0),
       imageUrl: getProductImageUrl(currentProduct),
       quantity: 1
     });
   }
-  localStorage.setItem("koiotProductCart", JSON.stringify(cart));
+  localStorage.setItem("kogameProductCart", JSON.stringify(cart));
   alert("เพิ่มสินค้าเข้าตะกร้าแล้ว");
 }
 
@@ -166,7 +166,7 @@ function buyProduct() {
   window.location.href = `payment.html?${new URLSearchParams({
     type: "product",
     productId: currentProduct.productId || "",
-    item: currentProduct.name || "สินค้า KOIOT",
+    item: currentProduct.name || "สินค้า KOGame",
     amount: summary.total,
     subtotal: summary.subtotal,
     shipping: summary.shipping
@@ -181,7 +181,7 @@ function renderProduct(product) {
   const imageUrl = galleryImages[0] || "";
   const specs = parseSpecs(product);
 
-  document.title = `KOIOT Shop | ${product.name || "รายละเอียดสินค้า"}`;
+  document.title = `KOGame Shop | ${product.name || "รายละเอียดสินค้า"}`;
   document.getElementById("heroTitle").innerText = product.name || "รายละเอียดสินค้า";
   document.getElementById("heroDescription").innerText = product.description || "ดูรายละเอียด ราคา และจำนวนคงเหลือก่อนสั่งซื้อ";
 
@@ -189,13 +189,13 @@ function renderProduct(product) {
     <div class="detail-grid">
       <div class="product-gallery">
         <div class="product-photo">
-          <img id="mainProductImage" src="${escapeHTML(imageUrl)}" alt="${escapeHTML(product.name || "สินค้า KOIOT")}" onerror="this.style.display='none';">
+          <img id="mainProductImage" src="${escapeHTML(imageUrl)}" alt="${escapeHTML(product.name || "สินค้า KOGame")}" onerror="this.style.display='none';">
         </div>
         ${galleryImages.length > 1 ? `
           <div class="thumb-grid">
             ${galleryImages.map((url, index) => `
               <button class="thumb-button ${index === 0 ? "active" : ""}" type="button" onclick="setMainImage('${escapeHTML(url)}', this)" aria-label="ดูรูปสินค้า ${index + 1}">
-                <img src="${escapeHTML(url)}" alt="${escapeHTML(product.name || "สินค้า KOIOT")} ${index + 1}">
+                <img src="${escapeHTML(url)}" alt="${escapeHTML(product.name || "สินค้า KOGame")} ${index + 1}">
               </button>
             `).join("")}
           </div>
@@ -228,7 +228,7 @@ function renderProduct(product) {
           <button class="cart-button" type="button" onclick="addProductToCart()" ${soldOut ? "disabled" : ""} title="เพิ่มลงตะกร้า" aria-label="เพิ่มลงตะกร้า">🛒</button>
           <button class="buy-button" type="button" onclick="buyProduct()" ${soldOut ? "disabled" : ""}>${soldOut ? "สินค้าหมด" : "ซื้อสินค้า"}</button>
         </div>
-        <a class="secondary-link" href="koiot_products.html">กลับไปหน้าสินค้า</a>
+        <a class="secondary-link" href="kogame_products.html">กลับไปหน้าสินค้า</a>
       </div>
     </div>
   `;
@@ -268,9 +268,9 @@ async function loadProductDetail() {
 loadProductDetail();
 </script>
 
-  <div class="koiot-facebook-contact" aria-label="ติดต่อ KOIOT Shop ผ่าน Facebook">
-    <a class="koiot-facebook-toggle" href="https://www.facebook.com/profile.php?id=100092289725085" target="_blank" rel="noopener noreferrer" aria-label="Facebook Fan Page" title="Facebook Fan Page">
-      <span class="koiot-facebook-icon">f</span>
+  <div class="kogame-facebook-contact" aria-label="ติดต่อ KOGame Shop ผ่าน Facebook">
+    <a class="kogame-facebook-toggle" href="https://www.facebook.com/profile.php?id=100092289725085" target="_blank" rel="noopener noreferrer" aria-label="Facebook Fan Page" title="Facebook Fan Page">
+      <span class="kogame-facebook-icon">f</span>
     </a>
   </div>
 </body>

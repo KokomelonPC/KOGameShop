@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>KOIOT Shop | ที่อยู่จัดส่ง</title>
+<title>KOGame Shop | ที่อยู่จัดส่ง</title>
 <link rel="icon" type="image/png" href="favicon.png">
 <style>
 :root {
@@ -160,15 +160,15 @@ footer {
   <div class="layout">
     <aside class="sidebar">
       <div class="brand-box">
-        <h2>🛒 KOIOT Shop</h2>
+        <h2>🛒 KOGame Shop</h2>
         <p>จัดการข้อมูลที่อยู่สำหรับจัดส่งสินค้าในอนาคต</p>
       </div>
       <nav class="menu">
         <p class="menu-label">สินค้าและบริการของเรา</p>
         
-        <button class="menu-toggle active" type="button" onclick="toggleProductMenu(true)">🛒 สินค้า KOIOT Shop <span id="productMenuArrow">▴</span></button>
+        <button class="menu-toggle active" type="button" onclick="toggleProductMenu(true)">🛒 สินค้า KOGame Shop <span id="productMenuArrow">▴</span></button>
         <div id="productSubmenu" class="product-submenu">
-          <a href="koiot_products.html">หน้าแรกสินค้า</a>
+          <a href="kogame_products.html">หน้าแรกสินค้า</a>
           <a href="product_account.html">My Account</a>
           <a href="product_orders.html">My Orders</a>
           <a href="shipping_address.html" class="active">ที่อยู่จัดส่ง</a>
@@ -200,11 +200,11 @@ footer {
             </label>
             <div class="actions">
               <button class="primary" type="submit">บันทึกที่อยู่</button>
-              <a class="link-button secondary" href="koiot_products.html">กลับหน้าสินค้า</a>
+              <a class="link-button secondary" href="kogame_products.html">กลับหน้าสินค้า</a>
             </div>
           </form>
         </section>
-        <footer>KOIOT Shop</footer>
+        <footer>KOGame Shop</footer>
       </div>
     </main>
   </div>
@@ -234,7 +234,7 @@ const auth = getAuth(app);
 let activeUser = null;
 
 function storageKey() {
-  return activeUser ? "koiotShippingAddress_" + activeUser.uid : "koiotShippingAddress";
+  return activeUser ? "kogameShippingAddress_" + activeUser.uid : "kogameShippingAddress";
 }
 
 function loadAddress() {
@@ -269,9 +269,9 @@ onAuthStateChanged(auth, (user) => {
 });
 </script>
 
-  <div class="koiot-facebook-contact" aria-label="ติดต่อ KOIOT Shop ผ่าน Facebook">
-    <a class="koiot-facebook-toggle" href="https://www.facebook.com/profile.php?id=100092289725085" target="_blank" rel="noopener noreferrer" aria-label="Facebook Fan Page" title="Facebook Fan Page">
-      <span class="koiot-facebook-icon">f</span>
+  <div class="kogame-facebook-contact" aria-label="ติดต่อ KOGame Shop ผ่าน Facebook">
+    <a class="kogame-facebook-toggle" href="https://www.facebook.com/profile.php?id=100092289725085" target="_blank" rel="noopener noreferrer" aria-label="Facebook Fan Page" title="Facebook Fan Page">
+      <span class="kogame-facebook-icon">f</span>
     </a>
   </div>
 </body>

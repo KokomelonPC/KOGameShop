@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>แจ้งโอนเงิน | KOIOT Shop</title>
+<title>แจ้งโอนเงิน | KOGame Shop</title>
 <link rel="icon" type="image/png" href="favicon.png">
 <style>
 * { box-sizing: border-box; }
@@ -383,7 +383,7 @@ button:disabled { background: #94a3b8; cursor: not-allowed; }
   const productSubtotal = params.get("subtotal") || "";
   const productShipping = params.get("shipping") || "";
   const isCartPayment = productId.includes(",") || productId === "CART";
-  const itemName = isProductPayment ? (productItem || "สินค้า KOIOT") : (set ? `${isRenewal ? "ต่ออายุชุดคอม" : "ชุดคอม"} ${set}` : "-");
+  const itemName = isProductPayment ? (productItem || "สินค้า KOGame") : (set ? `${isRenewal ? "ต่ออายุชุดคอม" : "ชุดคอม"} ${set}` : "-");
   document.getElementById("itemName").innerText = itemName;
 
   if (isProductPayment) {
@@ -467,7 +467,7 @@ button:disabled { background: #94a3b8; cursor: not-allowed; }
           ? {
               action: "createProductOrder",
               productId: productId,
-              item: itemName || "สินค้า KOIOT",
+              item: itemName || "สินค้า KOGame",
               quantity: 1,
               amount: amount,
               uid: currentUser.uid,
@@ -507,7 +507,7 @@ button:disabled { background: #94a3b8; cursor: not-allowed; }
 
         alert("ส่งแจ้งโอนเรียบร้อย สามารถติดตามสถานะได้ที่ My Orders");
         if (isCartPayment) {
-          localStorage.removeItem("koiotProductCart");
+          localStorage.removeItem("kogameProductCart");
         }
         window.location.href = "product_orders.html";
       } catch (error) {
@@ -520,9 +520,9 @@ button:disabled { background: #94a3b8; cursor: not-allowed; }
   };
   </script>
 
-  <div class="koiot-facebook-contact" aria-label="ติดต่อ KOIOT Shop ผ่าน Facebook">
-    <a class="koiot-facebook-toggle" href="https://www.facebook.com/profile.php?id=100092289725085" target="_blank" rel="noopener noreferrer" aria-label="Facebook Fan Page" title="Facebook Fan Page">
-      <span class="koiot-facebook-icon">f</span>
+  <div class="kogame-facebook-contact" aria-label="ติดต่อ KOGame Shop ผ่าน Facebook">
+    <a class="kogame-facebook-toggle" href="https://www.facebook.com/profile.php?id=100092289725085" target="_blank" rel="noopener noreferrer" aria-label="Facebook Fan Page" title="Facebook Fan Page">
+      <span class="kogame-facebook-icon">f</span>
     </a>
   </div>
 </body>

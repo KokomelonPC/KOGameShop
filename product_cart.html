@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>KOIOT Shop | ตะกร้าสินค้า</title>
+<title>KOGame Shop | ตะกร้าสินค้า</title>
 <link rel="icon" type="image/png" href="favicon.png">
 <style>
 :root{--bg-sidebar:linear-gradient(180deg,rgba(15,23,42,.98),rgba(30,41,59,.96));--text-main:#0f172a;--text-soft:#475569;--text-muted:#94a3b8;--line-soft:rgba(148,163,184,.18);--shadow-xl:0 28px 70px rgba(15,23,42,.18);--shadow-md:0 12px 28px rgba(15,23,42,.08)}
@@ -16,13 +16,13 @@
 <body>
 <div class="layout">
   <aside class="sidebar">
-    <div class="brand-box"><h2>🛒 KOIOT Shop</h2><p>รวมสินค้าที่คุณเพิ่มไว้ในตะกร้า ก่อนส่งไปหน้าชำระเงิน</p></div>
+    <div class="brand-box"><h2>🛒 KOGame Shop</h2><p>รวมสินค้าที่คุณเพิ่มไว้ในตะกร้า ก่อนส่งไปหน้าชำระเงิน</p></div>
     <nav class="menu">
       <p class="menu-label">สินค้าและบริการของเรา</p>
       
-      <button class="menu-toggle active" type="button">🛒 สินค้า KOIOT Shop <span>▴</span></button>
+      <button class="menu-toggle active" type="button">🛒 สินค้า KOGame Shop <span>▴</span></button>
       <div class="product-submenu">
-        <a href="koiot_products.html">หน้าแรกสินค้า</a>
+        <a href="kogame_products.html">หน้าแรกสินค้า</a>
         <a href="product_cart.html" class="active">ตะกร้าสินค้า</a>
         <a href="product_account.html">My Account</a>
         <a href="product_orders.html">My Orders</a>
@@ -50,17 +50,17 @@
           <div class="summary-line"><span>จำนวนสินค้า</span><strong id="totalQty">0</strong></div>
           <div class="summary-line"><span>ยอดสินค้า</span><strong id="subtotalAmount">0 บาท</strong></div><div class="summary-line"><span>ค่าส่ง</span><strong id="shippingFee">0 บาท</strong></div><div class="summary-line summary-total"><span>ยอดรวม</span><strong id="totalAmount">0 บาท</strong></div>
           <button class="primary" type="button" onclick="checkoutCart()">ไปชำระเงิน</button>
-          <a class="secondary" href="koiot_products.html">เลือกสินค้าเพิ่ม</a>
+          <a class="secondary" href="kogame_products.html">เลือกสินค้าเพิ่ม</a>
           <button class="secondary" type="button" onclick="clearCart()">ล้างตะกร้า</button>
         </aside>
       </section>
-      <footer>KOIOT Shop</footer>
+      <footer>KOGame Shop</footer>
     </div>
   </main>
 </div>
 
 <script>
-const CART_KEY = "koiotProductCart";
+const CART_KEY = "kogameProductCart";
 const SHIPPING_FEE = 50;
 const FREE_SHIPPING_MINIMUM = 1000;
 
@@ -114,9 +114,9 @@ function renderCart() {
 
   list.innerHTML = cart.map((item, index) => `
     <article class="cart-item">
-      <img src="${escapeHTML(item.imageUrl || "")}" alt="${escapeHTML(item.name || "สินค้า KOIOT")}" onerror="this.style.display='none';">
+      <img src="${escapeHTML(item.imageUrl || "")}" alt="${escapeHTML(item.name || "สินค้า KOGame")}" onerror="this.style.display='none';">
       <div>
-        <h3>${escapeHTML(item.name || "สินค้า KOIOT")}</h3>
+        <h3>${escapeHTML(item.name || "สินค้า KOGame")}</h3>
         <p>${formatBaht(item.price)} x ${Number(item.quantity || 1).toLocaleString("th-TH")}</p>
         <div class="qty-control">
           <button type="button" onclick="changeQty(${index}, -1)" aria-label="ลดจำนวน">-</button>
@@ -159,7 +159,7 @@ function checkoutCart() {
   }
 
   const summary = getCartSummary(cart);
-  const itemText = cart.map(item => `${item.name || "สินค้า KOIOT"} x${Number(item.quantity || 1)}`).join(", ");
+  const itemText = cart.map(item => `${item.name || "สินค้า KOGame"} x${Number(item.quantity || 1)}`).join(", ");
   const productIds = cart.map(item => item.productId || "").filter(Boolean).join(",");
 
   window.location.href = `payment.html?${new URLSearchParams({
@@ -175,9 +175,9 @@ function checkoutCart() {
 renderCart();
 </script>
 
-  <div class="koiot-facebook-contact" aria-label="ติดต่อ KOIOT Shop ผ่าน Facebook">
-    <a class="koiot-facebook-toggle" href="https://www.facebook.com/profile.php?id=100092289725085" target="_blank" rel="noopener noreferrer" aria-label="Facebook Fan Page" title="Facebook Fan Page">
-      <span class="koiot-facebook-icon">f</span>
+  <div class="kogame-facebook-contact" aria-label="ติดต่อ KOGame Shop ผ่าน Facebook">
+    <a class="kogame-facebook-toggle" href="https://www.facebook.com/profile.php?id=100092289725085" target="_blank" rel="noopener noreferrer" aria-label="Facebook Fan Page" title="Facebook Fan Page">
+      <span class="kogame-facebook-icon">f</span>
     </a>
   </div>
 </body>
