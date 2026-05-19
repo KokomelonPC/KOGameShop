@@ -242,7 +242,7 @@ function saveProductImage(body, productId) {
   const fileName = productId + "-" + safeName;
   const blob = Utilities.newBlob(bytes, body.imageType || "image/jpeg", fileName);
   const file = folder.createFile(blob);
-  makeFilePublic(file);
+  tryMakeFilePublic(file);
   return {
     imageUrl: "https://drive.google.com/uc?export=view&id=" + file.getId(),
     imageFileId: file.getId()
@@ -263,7 +263,7 @@ function saveProductGalleryImages(body, productId) {
       const fileName = productId + "-gallery-" + (index + 1) + "-" + safeName;
       const blob = Utilities.newBlob(bytes, item.imageType || "image/jpeg", fileName);
       const file = folder.createFile(blob);
-      makeFilePublic(file);
+      tryMakeFilePublic(file);
       saved.imageUrls.push("https://drive.google.com/uc?export=view&id=" + file.getId());
       saved.imageFileIds.push(file.getId());
     } catch (error) {
@@ -278,8 +278,12 @@ function saveProductGalleryImages(body, productId) {
   return saved;
 }
 
-function makeFilePublic(file) {
-  file.setSharing(DriveApp.Access.ANYONE_WITH_LINK, DriveApp.Permission.VIEW);
+function tryMakeFilePublic(file) {
+  try {
+    file.setSharing(DriveApp.Access.ANYONE_WITH_LINK, DriveApp.Permission.VIEW);
+  } catch (error) {
+    Logger.log("File sharing update skipped: " + error.message);
+  }
 }
 
 function getExtensionFromMimeType(mimeType) {
@@ -498,6 +502,14 @@ function testGetProducts() {
 function testDriveAccess() {
   const folder = DriveApp.getFolderById(PRODUCT_IMAGE_FOLDER_ID);
   Logger.log(folder.getName());
+}
+
+function testDriveWriteAccess() {
+  const folder = DriveApp.getFolderById(PRODUCT_IMAGE_FOLDER_ID);
+  const blob = Utilities.newBlob("KOGame Shop upload permission test", "text/plain", "kogame-upload-test.txt");
+  const file = folder.createFile(blob);
+  file.setTrashed(true);
+  Logger.log("Drive write access OK: " + folder.getName());
 }
 
 
