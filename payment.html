@@ -382,6 +382,7 @@ button:disabled { background: #94a3b8; cursor: not-allowed; }
   const productAmount = params.get("amount") || "";
   const productSubtotal = params.get("subtotal") || "";
   const productShipping = params.get("shipping") || "";
+  const productQuantity = Math.max(1, Math.floor(Number(params.get("quantity") || 1)));
   const productPayableAmount = productSubtotal || productAmount;
   const isCartPayment = productId.includes(",") || productId === "CART";
   const itemName = isProductPayment ? (productItem || "สินค้า KOGame") : (set ? `${isRenewal ? "ต่ออายุชุดคอม" : "ชุดคอม"} ${set}` : "-");
@@ -397,6 +398,7 @@ button:disabled { background: #94a3b8; cursor: not-allowed; }
       : "";
     document.getElementById("note").value = [
       productId ? `สั่งซื้อสินค้า ${itemName} (${productId})` : `สั่งซื้อสินค้า ${itemName}`,
+      isCartPayment ? "" : `จำนวน ${productQuantity.toLocaleString("th-TH")} ชิ้น`,
       shippingNote
     ].filter(Boolean).join("\n");
   }
@@ -469,7 +471,7 @@ button:disabled { background: #94a3b8; cursor: not-allowed; }
               action: "createProductOrder",
               productId: productId,
               item: itemName || "สินค้า KOGame",
-              quantity: 1,
+              quantity: productQuantity,
               amount: amount,
               uid: currentUser.uid,
               email: currentUser.email || "",

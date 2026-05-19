@@ -338,6 +338,27 @@ body {
   grid-template-columns: 48px 1fr;
   gap: 10px;
 }
+.quantity-picker {
+  display: grid;
+  gap: 6px;
+  margin-top: 12px;
+}
+.quantity-picker label {
+  color: var(--text-soft);
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+.quantity-picker input {
+  width: 100%;
+  min-height: 40px;
+  border: 1px solid var(--line-soft);
+  border-radius: 12px;
+  padding: 8px 12px;
+  background: #fff;
+  color: var(--text-main);
+  font: inherit;
+  font-weight: 800;
+}
 .cart-button {
   min-height: 44px;
   border: 1px solid rgba(37, 99, 235, 0.22);
@@ -581,6 +602,16 @@ function getProductCheckoutSummary(price) {
   return { subtotal, shipping, total: subtotal + shipping };
 }
 
+function getRequestedQuantity(productId) {
+  const product = productById.get(productId);
+  const stock = Math.max(1, getProductStock(product || {}));
+  const input = document.getElementById(`qty-${productId}`);
+  const quantity = Math.floor(Number(input?.value || 1));
+  const safeQuantity = Math.min(stock, Math.max(1, quantity));
+  if (input) input.value = safeQuantity;
+  return safeQuantity;
+}
+
 window.buyProduct = async function (productId) {
   const product = productById.get(productId);
   if (!product) {
@@ -599,11 +630,13 @@ window.buyProduct = async function (productId) {
     return;
   }
 
-  const summary = getProductCheckoutSummary(product.price);
+  const quantity = getRequestedQuantity(productId);
+  const summary = getProductCheckoutSummary(Number(product.price || 0) * quantity);
   window.location.href = `payment.html?${new URLSearchParams({
     type: "product",
     productId: product.productId || productId,
     item: product.name || "สินค้า KOGame",
+    quantity,
     amount: summary.total,
     subtotal: summary.subtotal,
     shipping: summary.shipping
@@ -624,15 +657,17 @@ window.addProductToCart = function (productId) {
 
   const cart = JSON.parse(localStorage.getItem("kogameProductCart") || "[]");
   const existing = cart.find(item => item.productId === (product.productId || productId));
+  const quantity = getRequestedQuantity(productId);
   if (existing) {
-    existing.quantity = Number(existing.quantity || 1) + 1;
+    existing.quantity = Math.min(getProductStock(product), Number(existing.quantity || 1) + quantity);
   } else {
     cart.push({
       productId: product.productId || productId,
       name: product.name || "สินค้า KOGame",
       price: Number(product.price || 0),
       imageUrl: getProductImageUrl(product),
-      quantity: 1
+      quantity,
+      stock: getProductStock(product)
     });
   }
 
@@ -673,6 +708,12 @@ async function loadProducts() {
               <span class="product-price">${Number(product.price || 0).toLocaleString("th-TH")} บาท</span>
               <span class="product-stock">${soldOut ? "สินค้าหมด" : `คงเหลือ ${stock}`}</span>
             </div>
+            ${soldOut ? "" : `
+              <div class="quantity-picker">
+                <label for="qty-${escapeHTML(productId)}">จำนวนที่ต้องการซื้อ</label>
+                <input id="qty-${escapeHTML(productId)}" type="number" min="1" max="${stock}" step="1" value="1" inputmode="numeric">
+              </div>
+            `}
             <div class="product-actions">
               <button class="cart-button" type="button" onclick="addProductToCart('${escapeHTML(productId)}')" ${soldOut ? "disabled" : ""} title="เพิ่มลงตะกร้า" aria-label="เพิ่มลงตะกร้า">🛒</button>
               <button class="buy-button" type="button" onclick="buyProduct('${escapeHTML(productId)}')" ${soldOut ? "disabled" : ""}>${soldOut ? "สินค้าหมด" : "ซื้อสินค้า"}</button>
