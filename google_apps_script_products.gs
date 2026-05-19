@@ -242,7 +242,8 @@ function saveProductImage(body, productId) {
   const fileName = productId + "-" + safeName;
   const blob = Utilities.newBlob(bytes, body.imageType || "image/jpeg", fileName);
   const file = folder.createFile(blob);
-return {
+  makeFilePublic(file);
+  return {
     imageUrl: "https://drive.google.com/uc?export=view&id=" + file.getId(),
     imageFileId: file.getId()
   };
@@ -262,6 +263,7 @@ function saveProductGalleryImages(body, productId) {
       const fileName = productId + "-gallery-" + (index + 1) + "-" + safeName;
       const blob = Utilities.newBlob(bytes, item.imageType || "image/jpeg", fileName);
       const file = folder.createFile(blob);
+      makeFilePublic(file);
       saved.imageUrls.push("https://drive.google.com/uc?export=view&id=" + file.getId());
       saved.imageFileIds.push(file.getId());
     } catch (error) {
@@ -274,6 +276,10 @@ function saveProductGalleryImages(body, productId) {
   }
 
   return saved;
+}
+
+function makeFilePublic(file) {
+  file.setSharing(DriveApp.Access.ANYONE_WITH_LINK, DriveApp.Permission.VIEW);
 }
 
 function getExtensionFromMimeType(mimeType) {
