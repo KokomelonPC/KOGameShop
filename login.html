@@ -3,7 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Login - KOKOMELON</title>
+<title>Login - KOGame Shop</title>
+<script>
+  const loginSiteTitles = {
+    "www.kopcservice.com": "KOPC Service",
+    "kopcservice.com": "KOPC Service",
+    "www.koiotshop.com": "KOIOT Shop",
+    "koiotshop.com": "KOIOT Shop",
+    "www.kogameshop.com": "KOGame Shop",
+    "kogameshop.com": "KOGame Shop"
+  };
+  const loginSiteTitle = loginSiteTitles[window.location.hostname.toLowerCase()];
+  if (loginSiteTitle) {
+    document.title = `Login - ${loginSiteTitle}`;
+  }
+</script>
 <link rel="icon" type="image/png" href="favicon.png?v=20260520-2">
 <style>
 * { box-sizing: border-box; }
